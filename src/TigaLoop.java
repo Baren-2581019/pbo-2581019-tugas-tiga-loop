@@ -61,3 +61,31 @@ public class TigaLoop {
 
         System.out.println("i <  n berputar : " + kurang + " kali");
         System.out.println("i <= n berputar : " + kurangSama + " kali");
+
+        // Saringan deret 1-10
+        System.out.print("Disaring : ");
+        int jumlahPrint = 0;
+
+        // Bagian saringan memakai angka tetap 1-10, tidak ikut n
+        for (int i = 1; i <= 10; i++) {
+            if (i % 2 == 0) {
+                continue; // Lewati angka genap
+            }
+            if (i > 7) {
+                break; // Berhenti kalau i > 7
+            }
+            System.out.print(i + " ");
+            jumlahPrint++;
+        }
+        System.out.println("\nSampai println : " + jumlahPrint + " kali");
+
+        /*
+         * PENJELASAN KENAPA LOOP TIDAK BERHENTI DI i = 8:
+         * Karena urutan penulisan kode di dalam badan loop. Pengecekan 'continue' untuk angka genap (i % 2 == 0)
+         * berada SEBELUM pengecekan 'break' (i > 7). Saat i bernilai 8, kondisi genap terpenuhi, sehingga 'continue'
+         * langsung memicu perulangan melompat ke iterasi berikutnya (i = 9) tanpa sempat membaca baris pengecekan 'break'.
+         */
+
+        scanner.close();
+    }
+}
